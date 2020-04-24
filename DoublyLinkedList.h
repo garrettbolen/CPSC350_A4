@@ -4,7 +4,6 @@
 template <typename type> class DoublyLinkedList{
   public:
     DoublyLinkedList();
-    ~DoublyLinkedList();
 
     void insertFront(type data);
     void insertBack(type d);
