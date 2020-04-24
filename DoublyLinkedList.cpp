@@ -22,13 +22,13 @@ template <typename type> bool DoublyLinkedList<type>::isEmpty(){
   return (size == 0);
 }
 
-template <typename type> void DoublyLinkedList<type>::printList(){
-  ListNode<type>* curr = front;
-  while(curr != NULL){
-    cout << curr->data << endl;
-    curr = curr->next;
-  }
-}
+// template <typename type> void DoublyLinkedList<type>::printList(){
+//   ListNode<type>* curr = front;
+//   while(curr != NULL){
+//     cout << curr->data << endl;
+//     curr = curr->next;
+//   }
+// }
 
 template <typename type> void DoublyLinkedList<type>::insertFront(type d){
   ListNode<type>* node = new ListNode<type>(d);
@@ -67,7 +67,7 @@ template <typename type> type DoublyLinkedList<type>::removeFront(){
   }
   front = front->next;
   tempNode->next = NULL;
-  int temp = tempNode->data;
+  type temp = tempNode->data;
   size--;
   delete tempNode;
 
@@ -75,71 +75,72 @@ template <typename type> type DoublyLinkedList<type>::removeFront(){
 
 }
 
-template <typename type> int DoublyLinkedList<type>::search(type val){
-  int pos = -1;
-  ListNode<type>* curr = front;
-  while(curr != NULL){
-    ++pos;
-    if(curr->data == val)
-      break;
-    else
-      curr == curr->next;
-    if(curr == NULL)
-      pos = -1;
-  }
-  return pos;
-}
-
-template <typename type> type DoublyLinkedList<type>::removeAtPos(int pos){
-  //error checking to make sure pos does not exceed size
-  int idx = 0;
-  ListNode<type>* curr = front;
-  ListNode<type>* prev = front;
-
-  while(idx != pos){
-    prev = curr;
-    curr = curr->next;
-    idx++;
-  }
-  prev->next = curr->next;
-  curr->next = NULL;
-  int temp = curr->data;
-  delete curr;
-  size--;
-
-  return temp;
-}
-
-template <typename type> type DoublyLinkedList<type>::remove(type value){
-  ListNode<type>* curr = front;
-
-  while(curr->data != value){
-    curr = curr->next;
-    if(curr == NULL)
-      return -1;
-  }
-  //if we make it here, then we found the value and must delete it
-  if(curr == front){
-    front = curr->next;
-  }
-
-  else if(curr == back){
-    back = curr->prev;
-  }
-  else{
-    curr->prev->next = curr->next;
-  }
-  curr->next = NULL;
-  curr->prev = NULL;
-  int temp = curr->data;
-  size--;
-  delete curr;
-  return temp;
-}
-
+// template <typename type> int DoublyLinkedList<type>::search(type val){
+//   int pos = -1;
+//   ListNode<type>* curr = front;
+//   while(curr != NULL){
+//     ++pos;
+//     if(curr->data == val)
+//       break;
+//     else
+//       curr == curr->next;
+//     if(curr == NULL)
+//       pos = -1;
+//   }
+//   return pos;
+// }
+//
+// template <typename type> type DoublyLinkedList<type>::removeAtPos(int pos){
+//   //error checking to make sure pos does not exceed size
+//   int idx = 0;
+//   ListNode<type>* curr = front;
+//   ListNode<type>* prev = front;
+//
+//   while(idx != pos){
+//     prev = curr;
+//     curr = curr->next;
+//     idx++;
+//   }
+//   prev->next = curr->next;
+//   curr->next = NULL;
+//   type temp = curr->data;
+//   delete curr;
+//   size--;
+//
+//   return temp;
+// }
+//
+// template <typename type> type DoublyLinkedList<type>::remove(type value){
+//   ListNode<type>* curr = front;
+//
+//   while(curr->data != value){
+//     curr = curr->next;
+//     if(curr == NULL)
+//       return -1;
+//   }
+//   //if we make it here, then we found the value and must delete it
+//   if(curr == front){
+//     front = curr->next;
+//   }
+//
+//   else if(curr == back){
+//     back = curr->prev;
+//   }
+//   else{
+//     curr->prev->next = curr->next;
+//   }
+//   curr->next = NULL;
+//   curr->prev = NULL;
+//   type temp = curr->data;
+//   size--;
+//   delete curr;
+//   return temp;
+// }
+//
 template <typename type> type DoublyLinkedList<type>::peek(){
   return front->data;
 }
 
-//This ensures an int DoublyLinkedList will be supported
+//This ensures a student and int DoublyLinkedList will be supported
+template class DoublyLinkedList<Student>;
 template class DoublyLinkedList<int>;

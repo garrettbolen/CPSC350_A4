@@ -1,3 +1,4 @@
+#include "Student.h"
 #pragma once
 
 template <typename type> class ListNode{

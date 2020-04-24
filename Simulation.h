@@ -1,15 +1,22 @@
+#include "GenQueue.h"
+#include "Window.h"
 #include <fstream>
 #pragma once
+
+using namespace std;
 
 class Simulation{
 public:
   Simulation(string filename);
   ~Simulation();
   void run();
+  int findWindow();
+  bool checkDone(Window w);
 
   ifstream inFS;
-  DoublyLinkedList<bool>* windows;
+  Window* windows;
 
+  int numWindows;
   int longestWait;
   int meanWait;
   int medianWait;

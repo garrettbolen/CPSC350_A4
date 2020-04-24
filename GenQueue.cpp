@@ -33,5 +33,5 @@ template <typename type> int GenQueue<type>::getSize(){
   return numElements;
 }
 
-//This ensures an int queue will be supported
-template class GenQueue<int>;
+//This ensures an student queue will be supported
+template class GenQueue<Student>;
