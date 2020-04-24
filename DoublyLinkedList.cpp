@@ -4,14 +4,20 @@
 
 using namespace std;
 
+//Constructor
 template <typename type> DoublyLinkedList<type>::DoublyLinkedList(){
   front = NULL;
   back = NULL;
   size = 0;
 }
 
+//Destructor
 template <typename type> DoublyLinkedList<type>::~DoublyLinkedList(){
-
+  ListNode<type>* curr = front;
+  while(curr != NULL){
+    delete curr;
+    curr = curr->next;
+  }
 }
 
 template <typename type> unsigned int DoublyLinkedList<type>::getSize(){

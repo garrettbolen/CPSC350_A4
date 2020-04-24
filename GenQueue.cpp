@@ -10,7 +10,6 @@ template <typename type> GenQueue<type>::~GenQueue(){
 }
 
 template <typename type> void GenQueue<type>::insert(type d){
-  //add error checking
   myQueue->insertBack(d);
   ++numElements;
 }

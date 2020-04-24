@@ -2,10 +2,6 @@
 #pragma once
 
 template <typename type> class DoublyLinkedList{
-  private:
-    ListNode<type>* front;
-    ListNode<type>* back;
-    unsigned int size;
   public:
     DoublyLinkedList();
     ~DoublyLinkedList();
@@ -23,5 +19,9 @@ template <typename type> class DoublyLinkedList{
 
     unsigned int getSize();
     bool isEmpty();
+
+    ListNode<type>* front;
+    ListNode<type>* back;
+    unsigned int size;
     //void printList();
 };
