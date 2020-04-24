@@ -86,18 +86,7 @@ void Simulation::run(){
       curr = curr->next;
     }
   }
-  cout << "Wait Times: " << endl;
-  ListNode<int>* curr2 = waitTimes.front;
-  while(curr2 != NULL){
-    cout << curr2->data << endl;
-    curr2 = curr2->next;
-  }
-  cout << "Idle Times: " << endl;
-  ListNode<int>* curr3 = idleTimes.front;
-  while(curr3 != NULL){
-    cout << curr3->data << endl;
-    curr3 = curr3->next;
-  }
+
   //Here all of the calculation stat functions are called and printed out
   cout << "Mean student wait time: " << findMean(waitTimes) << " minutes" << endl;
   cout << "Median student wait time: " << findMedian(waitTimes) << " minutes" << endl;
